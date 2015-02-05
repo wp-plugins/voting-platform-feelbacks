@@ -7,7 +7,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8 or higher
 Tested up to: 3.9
 Tested up to: 3.9
-Stable tag: 1.00
+Stable tag: 1.01
 
 Feelbacks is a new engagement tool that allows users to express their feeling about your content. 
 
@@ -105,11 +105,16 @@ Yes we do have SSL dashboard login (Secure login). Please login to: https://dash
 = 1.0 =
 * First Version released
 
+= 1.01 =
+* Adding plugin info
+
 == Upgrade Notice ==
 
 = 1.0 =
 First version is available
 
+= 1.01 =
+* Adding plugin info
 
 == A brief Markdown Example ==
 

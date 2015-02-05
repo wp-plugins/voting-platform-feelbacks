@@ -2,7 +2,7 @@
 /*
 Plugin Name: Vicomi Feelbacks
 Plugin URI: http://vicomi.com/
-Description: [ ADD DESCRIPTION HERE ]
+Description: [ Feelbacks is a new engagement tool that allows users to express their feeling about your content ]
 Author: Vicomi <support@vicomi.com>
 Version: 1.0
 Author URI: http://vicomi.com/

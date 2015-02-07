@@ -8,7 +8,7 @@ Description: [ Feelbacks is a new voting engagement widget that allows users to 
 Description: [ Feelbacks is a new voting engagement tool that allows users to express their feelings about your content ]
 >>>>>>> .r1084654
 Author: Vicomi <support@vicomi.com>
-Version: 1.03
+Version: 1.04
 Author URI: http://vicomi.com/
 */
 

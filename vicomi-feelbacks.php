@@ -2,18 +2,18 @@
 /*
 Plugin Name: Vicomi Feelbacks
 Plugin URI: http://vicomi.com/
-<<<<<<< .mine
-Description: [ Feelbacks is a new voting engagement widget that allows users to express their feelings about your content ]
-=======
-Description: [ Feelbacks is a new voting engagement tool that allows users to express their feelings about your content ]
->>>>>>> .r1084654
+Description: Feelbacks is a new voting engagement widget that allows users to express their feelings about your content
 Author: Vicomi <support@vicomi.com>
-Version: 1.05
+Version: 1.06
 Author URI: http://vicomi.com/
 */
 
 require_once(dirname(__FILE__) . '/lib/vc-api.php');
-define('VICOMI_FEELBACKS_V', '1.0');
+define('VICOMI_FEELBACKS_V', '1.1');
+// set unique id
+if(!get_option('vicomi_feelbacks_uuid')) {
+    update_option('vicomi_feelbacks_uuid', vccGetGUID());
+}
 
 function vicomi_feelbacks_plugin_basename($file) {
     $file = dirname($file);
@@ -53,17 +53,17 @@ function vicomi_feelbacks_is_installed() {
 **************************************************/
 function vicomi_feelbacks_activate() {
     $vicomi_feelbacks_api = new VicomiAPI();
-    $vicomi_feelbacks_api->plugin_activate(get_option('vicomi_feelbacks_api_key'), 'feelbacks');
+    $vicomi_feelbacks_api->plugin_activate(get_option('vicomi_feelbacks_api_key'), 'feelbacks', get_option('vicomi_feelbacks_uuid'));
 }
 
 function vicomi_feelbacks_deactivate() {
     $vicomi_feelbacks_api = new VicomiAPI();
-    $vicomi_feelbacks_api->plugin_deactivate(get_option('vicomi_feelbacks_api_key'), 'feelbacks');
+    $vicomi_feelbacks_api->plugin_deactivate(get_option('vicomi_feelbacks_api_key'), 'feelbacks', get_option('vicomi_feelbacks_uuid'));
 }
 
 function vicomi_feelbacks_uninstall() {
     $vicomi_feelbacks_api = new VicomiAPI();
-    $vicomi_feelbacks_api->plugin_uninstall(get_option('vicomi_feelbacks_api_key'), 'feelbacks');
+    $vicomi_feelbacks_api->plugin_uninstall(get_option('vicomi_feelbacks_api_key'), 'feelbacks', get_option('vicomi_feelbacks_uuid'));
 }
 
 register_activation_hook( __FILE__, 'vicomi_feelbacks_activate' );
@@ -338,6 +338,27 @@ if(!function_exists('cf_json_encode')) {
             $json_str = '"'. cfjson_encode_string($arr) . '"';
         }
         return $json_str;
+    }
+}
+
+// generate unique id
+if(!function_exists('vccGetGUID')) {
+    function vccGetGUID(){
+        if (function_exists('com_create_guid')){
+            return com_create_guid();
+        }else{
+            mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
+            $charid = strtoupper(md5(uniqid(rand(), true)));
+            $hyphen = chr(45);// "-"
+            $uuid = chr(123)// "{"
+                .substr($charid, 0, 8).$hyphen
+                .substr($charid, 8, 4).$hyphen
+                .substr($charid,12, 4).$hyphen
+                .substr($charid,16, 4).$hyphen
+                .substr($charid,20,12)
+                .chr(125);// "}"
+            return $uuid;
+        }
     }
 }
 

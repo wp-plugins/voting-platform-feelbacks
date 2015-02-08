@@ -44,9 +44,9 @@ if ( isset($_POST['vc_api_key']) ) {
 //$vicomi_api_key = isset($_POST['vicomi_api_key']) ? strip_tags($_POST['vicomi_api_key']) : null;
 
 
-$login_url = 'http://cms.vicomi.com?platform=wordpress&wt=1';
+$login_url = 'http://cms.vicomi.com?platform=wordpress&wt=1&uid='.get_option('vicomi_feelbacks_uuid');
 $moderation_url = 'http://dashboard.vicomi.com/';
-//$login_url = 'http://localhost:9002?platform=wordpress&wt=0';
+//$login_url = 'http://localhost:9002?platform=wordpress&wt=1&uid='.get_option('vicomi_feelbacks_uuid');
 //$moderation_url = 'http://localhost:9000/';
 
 if (vicomi_feelbacks_is_installed()) {
@@ -111,21 +111,28 @@ window.vcPostMessageService.listen(function(e) {
 
     var api_key_message_prefix = "vicomi:cms:apikey:";
     var finish_message_prefix = "vicomi:cms:finish";
+    var api_key_and_finish_message_prefix = "vicomi:cms:apikeyfinish:";
 
-    if(event.data.indexOf(api_key_message_prefix) > -1) {
+    if(e.data.indexOf(api_key_message_prefix) > -1) {
 
-        var apiKey = event.data.replace(api_key_message_prefix, "");
-        updateApiKey(apiKey);
+        var apiKey = e.data.replace(api_key_message_prefix, "");
+        updateApiKey(apiKey, false);
     }
 
-    if(event.data.indexOf(finish_message_prefix) > -1) {
+    if(e.data.indexOf(finish_message_prefix) > -1) {
 
         reload();
     }
 
+    if(e.data.indexOf(api_key_and_finish_message_prefix) > -1) {
+
+        var apiKey = e.data.replace(api_key_and_finish_message_prefix, "");
+        updateApiKey(apiKey, true);
+    }
+
  });
 
-function updateApiKey(apiKey) {
+function updateApiKey(apiKey, doReload) {
 
     // submit form
     jQuery.ajax({
@@ -134,7 +141,9 @@ function updateApiKey(apiKey) {
         data: {vc_api_key: apiKey},
         cache: false,
         success: function(result){
-
+            if(doReload) {
+                reload();
+            }
         }
     });
 }

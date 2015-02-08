@@ -7,7 +7,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8 or higher
 Tested up to: 3.9
 Tested up to: 3.9
-Stable tag: 1.05
+Stable tag: 1.06
 
 Star Rating System? voting? so 90's! Say hello to the new Feelbacks vote system! A new emotional rating widget and votes tool 
 
@@ -144,6 +144,9 @@ A Rating-widget or a Star Rating System gives your users only one way to express
 = 1.05 =
 * Adding analytics dashboard options
 
+= 1.06 =
+* Adding voting design options
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -163,6 +166,9 @@ First version is available
 
 = 1.05 =
 * Adding analytics dashboard options 
+
+= 1.06 =
+* Adding voting design options
 
 == A brief Markdown Example ==
 

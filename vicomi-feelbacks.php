@@ -4,7 +4,7 @@ Plugin Name: Vicomi Feelbacks
 Plugin URI: http://vicomi.com/
 Description: Feelbacks is a new voting engagement widget that allows users to express their feelings about your content
 Author: Vicomi <support@vicomi.com>
-Version: 1.07
+Version: 1.08
 Author URI: http://vicomi.com/
 */
 

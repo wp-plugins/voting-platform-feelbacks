@@ -226,9 +226,7 @@ add_action('admin_head', 'vicomi_feelbacks_admin_head');
 * add feelbacks container and script to page
 **************************************************/
 
-$EMBED = false;
 function vicomi_feelbacks_template($content) {
-    global $EMBED;
 
     if ( !( is_singular() ) ) {
         return;
@@ -238,7 +236,6 @@ function vicomi_feelbacks_template($content) {
         return $content;
     }
 
-    $EMBED = true;
 
     $plugin_content = '<div id="vc-feelback-main" data-access-token="' . get_option('vicomi_feelbacks_api_key') . '"></div>' .
         '<script type="text/javascript" src="http://assets-prod.vicomi.com/vicomi.js"></script>';

@@ -5,9 +5,9 @@ Tags: rate, rating, voting, vote, rates, votes, star, stars, multi-rating, post 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8 or higher
-Tested up to: 3.9
-Tested up to: 3.9
-Stable tag: 1.07
+Tested up to: 4.0
+Tested up to: 4.0
+Stable tag: 1.08
 
 Star Rating System? voting? so 90's! Say hello to the new Feelbacks vote system! A new emotional rating widget and votes tool 
 
@@ -37,6 +37,7 @@ Add Feelbacks voting platform in minutes!
 1. Uses the Vicomi API. Gives you free admin and the best analytics web tools.
 1. Customize and optimize Feelbacks rating system and design in WordPress with a cool visual platform. 
 1. More then Multi Rating - allow your users to vote with an emotional voting and rating system.
+1. New option to block specific URLs/Web sections from having the Feelbacks Voting platform within this section only
 
 = Vicomi Features =
 
@@ -44,9 +45,10 @@ Add Feelbacks voting platform in minutes!
 1.  Gives you much more than a Star Rating System.
 1.  Increase user's engagement within your site. Allow your users to rate with their emotions and not a stars rating system.
 1.  Choose your own look and feel.
-1. 	Recommendation content widget for increasing page-views and engagement. 
-1. 	Emotional stylish voting platform - better then stars and rating systems.
-1. 	Free analytics and admin tools.
+1.  Recommendation content widget for increasing page-views and engagement. 
+1.  Emotional stylish voting platform - better then stars and rating systems.
+1.  Free analytics and admin tools.
+1.  Option to remove specific sections from displaying the Feelbacks voting platform
 
 
 == Installation ==
@@ -150,6 +152,10 @@ A Rating-widget or a Star Rating System gives your users only one way to express
 = 1.07 =
 * Bug fix
 
+= 1.08 =
+* Added an option to block specific URLs/Web sections from displaying the Feelbacks Voting platform within this section only
+
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -175,6 +181,9 @@ First version is available
 
 = 1.07 =
 * Bug fix
+
+= 1.08 =
+* Added an option to block specific URLs/Web sections from displaying the Feelbacks Voting platform within this section only
 
 == A brief Markdown Example ==
 
